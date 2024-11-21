@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #1e1e2f, #2c3e50);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.menu {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.menuToggle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 45px #fff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform: rotate(calc(360deg / 8 * var(--i))) translate(150px) rotate(calc(-360deg / 8 * var(--i)));
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(calc(360deg / 8 * var(--i))) translate(150px) rotate(calc(-360deg / 8 * var(--i)));
+  }
+  100% {
+    transform: rotate(calc(360deg / 8 * var(--i) + 360deg)) translate(150px) rotate(calc(-360deg / 8 * var(--i) - 360deg));
+  }
+}
+
+.menu ul li a {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: var(--clr);
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--clr), 0 0 20px var(--clr), 0 0 40px var(--clr);
+  transition: transform 0.3s ease;
+}
+
+.menu ul li a:hover {
+  transform: scale(1.2);
+}
+
+/* استایل بخش سازنده */
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.footer strong {
+  color: #f39c12;
+}
+
